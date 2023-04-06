@@ -23,7 +23,7 @@ class ClearableWeakMap {
 
 const weakMap = new ClearableWeakMap();
 
-let primesObject = { a: 1, b: 2, c: 3, d: 4 };
+let primesObject = {a: 1, b: 2, c: 3, d: 4};
 
 Object.entries(primesObject).forEach((entry) => {
     weakMap.set(entry);

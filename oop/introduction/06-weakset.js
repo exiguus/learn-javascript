@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 let primesObject = {
     0: 2,
@@ -6,16 +6,15 @@ let primesObject = {
     2: 5,
     3: 7,
     4: 11,
-}
+};
 
-const primesWeakSet = new WeakSet()
+const primesWeakSet = new WeakSet();
 
 Object.entries(primesObject).forEach((entry) => {
-    primesWeakSet.add(entry)
-    console.log(primesWeakSet.has(entry), entry)
-})
-console.log(primesWeakSet)
-
+    primesWeakSet.add(entry);
+    console.log(primesWeakSet.has(entry), entry);
+});
+console.log(primesWeakSet);
 
 const primesObjectCopy = primesObject;
 primesObject = null;
@@ -23,7 +22,6 @@ primesObject = null;
 Object.entries(primesObjectCopy).forEach((entry) => {
     console.log(primesWeakSet.has(entry), entry);
 });
-
 
 function execRecursively(fn, subject, _refs = new WeakSet()) {
     // Avoid infinite recursion

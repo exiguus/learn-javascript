@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 // const Cons = function (car, cdr) {
 //     this.timestamp = Date.now()
@@ -9,34 +9,34 @@
 // }
 
 const Cons = function (car, cdr) {
-    this.timestamp = Date.now()
-    this.carValue = car
-    this.cdrValue = cdr
-    this.counterValue = this.getCounter
+    this.timestamp = Date.now();
+    this.carValue = car;
+    this.cdrValue = cdr;
+    this.counterValue = this.getCounter;
 
-    Cons.counter += 1
-}
+    Cons.counter += 1;
+};
 
-Cons.counter = 0
+Cons.counter = 0;
 
 Cons.prototype.getCounter = function () {
-    return Cons.counter
-}
+    return Cons.counter;
+};
 
 Cons.prototype.getCreationTime = function () {
-    return this.timestamp
-}
+    return this.timestamp;
+};
 
 Cons.prototype.toString = function () {
-    return `(${this.carValue}, ${this.cdrValue})`
-}
+    return `(${this.carValue}, ${this.cdrValue})`;
+};
 
 Cons.prototype.car = function () {
-    return this.carValue
-}
+    return this.carValue;
+};
 
 Cons.prototype.cdr = function () {
-    return this.cdrValue
-}
+    return this.cdrValue;
+};
 
-module.exports = Cons
+module.exports = Cons;

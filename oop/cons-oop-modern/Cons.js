@@ -1,49 +1,53 @@
-'use strict'
+"use strict";
 
 class Cons {
     static counter = 0;
 
     constructor(car, cdr) {
-        this.timestamp = Date.now()
-        this.carValue = car
-        this.cdrValue = cdr
-        this.counterValue = this.getCounter
+        this.timestamp = Date.now();
+        this.carValue = car;
+        this.cdrValue = cdr;
+        this.counterValue = this.getCounter;
 
-        Cons.counter += 1
+        Cons.counter += 1;
     }
 
     getCounter() {
-        return Cons.counter
+        return Cons.counter;
     }
 
     getCreationTime() {
-        return this.timestamp
+        return this.timestamp;
     }
 
     toString() {
-        return `(${this.carValue}, ${this.cdrValue})`
+        return `(${this.carValue}, ${this.cdrValue})`;
     }
 
     car() {
-        return this.carValue
+        return this.carValue;
     }
 
     cdr() {
-        return this.cdrValue
+        return this.cdrValue;
     }
 
     print() {
-        const self = this
-        console.log(`print: (${this.car()}, ${this.cdr()})`)
+        const self = this;
+        console.log(`print: (${this.car()}, ${this.cdr()})`);
         setTimeout(function () {
             try {
-                console.log(`print "this" SetTimeout: (${this.car()}, ${this.cdr()})`)
+                console.log(
+                    `print "this" SetTimeout: (${this.car()}, ${this.cdr()})`,
+                );
             } catch (err) {
-                console.log(err)
-                console.log(`print "self" SetTimeout: (${self.car()}, ${self.cdr()})`)
+                console.log(err);
+                console.log(
+                    `print "self" SetTimeout: (${self.car()}, ${self.cdr()})`,
+                );
             }
         }, 3_000);
     }
 }
 
-module.exports = Cons
+module.exports = Cons;

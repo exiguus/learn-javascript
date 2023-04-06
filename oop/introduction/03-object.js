@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 const primesObject = {
     0: 2,
@@ -9,10 +9,10 @@ const primesObject = {
     5: 13,
     6: 17,
     7: 19,
-}
+};
 
-console.log(primesObject[2])
-console.log(primesObject)
+console.log(primesObject[2]);
+console.log(primesObject);
 
-Object.assign(primesObject, { 8: 23 })
-console.log(primesObject)
+Object.assign(primesObject, {8: 23});
+console.log(primesObject);

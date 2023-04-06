@@ -1,46 +1,42 @@
+const {join} = require("path");
+const Cons = require(join(__dirname, "./Cons.js"));
 
-const { join } = require('path')
-const Cons = require(join(__dirname, './Cons.js'))
+const cell = new Cons(23, 43);
 
-const cell = new Cons(23, 43)
+console.log(cell);
+console.log(cell.car());
+console.log(cell.cdr());
+console.log(cell.getCreationTime());
 
-console.log(cell)
-console.log(cell.car())
-console.log(cell.cdr())
-console.log(cell.getCreationTime())
+console.log(Object.hasOwn(cell, "car"));
+console.log(Object.hasOwn(cell, "cdr"));
+console.log(Object.hasOwn(cell, "getCreationTime"));
+console.log(Object.hasOwn(cell, "toString"));
 
-console.log(Object.hasOwn(cell, 'car'))
-console.log(Object.hasOwn(cell, 'cdr'))
-console.log(Object.hasOwn(cell, 'getCreationTime'))
-console.log(Object.hasOwn(cell, 'toString'))
+console.log(cell.constructor);
+console.log(cell.__proto__);
+console.log(cell.__proto__.hasOwnProperty("car"));
+console.log(cell.__proto__.hasOwnProperty("cdr"));
+console.log(cell.__proto__.hasOwnProperty("getCreationTime"));
+console.log(cell.__proto__.hasOwnProperty("toString"));
+console.log(cell.__proto__.constructor);
 
-console.log(cell.constructor)
-console.log(cell.__proto__)
-console.log(cell.__proto__.hasOwnProperty('car'))
-console.log(cell.__proto__.hasOwnProperty('cdr'))
-console.log(cell.__proto__.hasOwnProperty('getCreationTime'))
-console.log(cell.__proto__.hasOwnProperty('toString'))
-console.log(cell.__proto__.constructor)
+console.log(cell.toString());
 
-console.log(cell.toString())
+console.log(cell.getCounter());
 
-console.log(cell.getCounter())
-
-
-const externalCar = cell.car
+const externalCar = cell.car;
 
 try {
-    externalCar()
+    externalCar();
 } catch (err) {
-    console.log(err)
+    console.log(err);
 }
 
-
 try {
-    const foo = { carValue: 'xyz' };
+    const foo = {carValue: "xyz"};
 
-    console.log(externalCar.apply(foo, [1, 2, 3]))
-
+    console.log(externalCar.apply(foo, [1, 2, 3]));
 } catch (err) {
-    console.log(err)
+    console.log(err);
 }
