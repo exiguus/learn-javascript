@@ -1,0 +1,30 @@
+{
+  "name": "learn-javascript",
+  "version": "0.0.1",
+  "description": "Learn JavaScript",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exiguus/learn-javascript.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "OOP",
+    "functional",
+    "programming",
+    "testing",
+    "asynchronously",
+    "DOM",
+    "Node.js",
+    "Web Components",
+    "React"
+  ],
+  "author": "Simon Gattner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/exiguus/learn-javascript/issues"
+  },
+  "homepage": "https://github.com/exiguus/learn-javascript#readme"
+}
