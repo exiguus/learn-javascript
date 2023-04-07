@@ -4,7 +4,7 @@
   "description": "Learn JavaScript",
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,mjs,html}\"",
-    "test": "node ./tests/examples.test.mjs",
+    "test": "node ./testing/self/examples.test.mjs",
     "prepare": "husky install"
   },
   "repository": {

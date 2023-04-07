@@ -5,14 +5,16 @@
 
 ## TOPICS
 
+- [ ] [Introduction](./introduction/README.md)
 - [x] [OOP](./oop/README.md)
 - [ ] [Functional](./functional/README.md)
-- [ ] [Asynchrone](./asynchrone/README.md)
+- [x] [Asynchrone](./asynchrone/README.md)
 - [ ] [DOM](./dom/README.md)
 - [ ] [Web Components](./web-components/README.md)
 - [ ] [Node.js](./nodejs/README.md)
-- [ ] [React](./react/README.md)
+- [ ] [TypeScript](./typescript/README.md)
 - [ ] [Testing](./testing/README.md)
+- [ ] [React](./react/README.md)
 
 ## Install
 
