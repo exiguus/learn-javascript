@@ -9,12 +9,12 @@
 - [x] [OOP](./oop/README.md)
 - [ ] [Functional](./functional/README.md)
 - [x] [Asynchrone](./asynchrone/README.md)
+- [ ] [Testing](./testing/README.md)
 - [ ] [Design Patterns](./patterns/README.md)
 - [ ] [DOM](./dom/README.md)
 - [ ] [Web Components](./web-components/README.md)
 - [ ] [Node.js](./nodejs/README.md)
 - [ ] [TypeScript](./typescript/README.md)
-- [ ] [Testing](./testing/README.md)
 - [ ] [React](./react/README.md)
 
 ## Install
