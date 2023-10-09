@@ -4,7 +4,11 @@
   "description": "Learn JavaScript",
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,mjs,html}\"",
-    "test": "node ./testing/self/examples.test.mjs",
+    "test": "pnpm /^test:.*/",
+    "test:unit": "jest",
+    "test:examples": "node ./testing/self/examples.test.mjs",
+    "watch:test:unit": "jest --watch",
+    "watch": "pnpm run watch:test:unit",
     "prepare": "husky install"
   },
   "repository": {
@@ -32,5 +36,8 @@
   "devDependencies": {
     "husky": "^8.0.3",
     "prettier": "^2.8.8"
+  },
+  "dependencies": {
+    "jest": "^29.7.0"
   }
 }

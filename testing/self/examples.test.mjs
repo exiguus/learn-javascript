@@ -26,6 +26,8 @@ async function test() {
     const jsFiles = getFilePaths("../../").filter(
         (file) =>
             !file.includes("node_modules") &&
+            !file.includes("spec.js") &&
+            !file.includes(".test.js") &&
             (file.endsWith(".js") ||
                 (file.endsWith(".mjs") && file !== __filename)),
     );
