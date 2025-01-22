@@ -6,16 +6,27 @@ import {fileURLToPath} from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const getFilePaths = function (dirPath, arrayOfFiles) {
-    const files = fs.readdirSync(path.join(__dirname, dirPath));
+const getFilePaths = (dirPath, arrayOfFiles = []) => {
+    const fullPath = path.join(__dirname, dirPath);
 
-    arrayOfFiles = arrayOfFiles || [];
+    if (!fs.existsSync(fullPath)) {
+        console.error(`Directory not found: ${fullPath}`);
+        return arrayOfFiles;
+    }
 
-    files.forEach(function (file) {
-        if (fs.statSync(path.join(__dirname, dirPath, file)).isDirectory()) {
-            arrayOfFiles = getFilePaths(path.join(dirPath, file), arrayOfFiles);
-        } else {
-            arrayOfFiles.push(path.join(__dirname, dirPath, file));
+    const files = fs.readdirSync(fullPath);
+
+    files.forEach((file) => {
+        const filePath = path.join(fullPath, file);
+        if (fs.existsSync(filePath)) {
+            if (fs.statSync(filePath).isDirectory()) {
+                arrayOfFiles = getFilePaths(
+                    path.join(dirPath, file),
+                    arrayOfFiles,
+                );
+            } else {
+                arrayOfFiles.push(filePath);
+            }
         }
     });
 
@@ -32,17 +43,19 @@ async function test() {
                 (file.endsWith(".mjs") && file !== __filename)),
     );
 
-    jsFiles.map(async (file) => {
-        try {
-            console.log(`test ${file}...`);
-            execSync(`node ${file}`).toString();
-            console.log(`test ${file}... OK`);
-        } catch (err) {
-            console.error(err);
-            return process.exit(err.status);
-        }
-    });
-    return process.exit(0);
+    try {
+        await Promise.all(
+            jsFiles.map(async (file) => {
+                console.log(`Testing ${file}...`);
+                execSync(`node ${file}`, {stdio: "inherit"});
+                console.log(`Testing ${file}... OK`);
+            }),
+        );
+        process.exit(0);
+    } catch (err) {
+        console.error(`Test failed: ${err.message}`);
+        process.exit(err.status || 1);
+    }
 }
 
 await test();
