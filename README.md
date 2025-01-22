@@ -37,6 +37,16 @@ or
 brew install nodejs
 ```
 
+then (optional: if you want to run tests)
+
+```bash
+npm i -g pnpm
+```
+
+```bash
+pnpm i
+```
+
 ## Run
 
 For example
@@ -68,29 +78,6 @@ pnpm test:unit
 
 ```bash
 pnpm watch:test
-```
-
-#### Setup
-
-```bash
-earn-javascript on  main [!?⇡] is 📦 v0.0.1 via  v18.16.0 via 💎 v3.0.0 
-❯ yarn create jest
-yarn create v1.22.19
-[1/4] Resolving packages...
-[2/4] Fetching packages...
-[3/4] Linking dependencies...
-[4/4] Building fresh packages...
-success Installed "create-jest@29.7.0" with binaries:
-      - create-jest
-[#############################################################################] 242/242
-The following questions will help Jest to create a suitable configuration for your project
-
-✔ Would you like to use Jest when running "test" script in "package.json"? … yes
-✔ Would you like to use Typescript for the configuration file? … no
-✔ Choose the test environment that will be used for testing › node
-✔ Do you want Jest to add coverage reports? … no
-✔ Which provider should be used to instrument code for coverage? › v8
-✔ Automatically clear mock calls, instances, contexts and results before every test? … yes
 ```
 
 ## Resources
